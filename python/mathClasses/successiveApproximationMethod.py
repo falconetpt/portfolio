@@ -1,15 +1,8 @@
 import math
 
 """##################################################################
-   #Program to solve zeros of a function                            #
-	* using sucessive aproach me	                                #
-	* Hail math classes people!! :)									#
-
-	________________________________________________________________#
-   
-   #Made By: Ricardo Gomes                                          #
-   #University: ISEP                                                #
-   #Year: 2017                                                      #
+	Returns the number of iterations needed to solve a root problem	#
+	Hail math classes people!! :)									#
 """##################################################################
 
 def iterationEval(a, b, c, errorCap, formula):
@@ -23,7 +16,7 @@ def iterationEval(a, b, c, errorCap, formula):
 			b=c
 		else:
 			a=c
-		c=(a+b)/2
+		c=(a*1.0+b*1.0)/2
 		i+=1
 	return i
 
@@ -42,8 +35,9 @@ def linePrint(a, b, c, i, formula):
 		images.append(y)
 		xAxis += "\t" + item[0] + str(x) + "\t"
 		yAxis += "F_" + item[0] + str(y) + "\t"
+
 	output = str(i+1) + xAxis + yAxis + "\tErro: " + str((b-a)/2)
-	
+
 	print(output)
 	return images
 
@@ -53,19 +47,24 @@ def linePrint(a, b, c, i, formula):
 """###########################################
 
 #Value of A
-a=0.1
+a=0.5
 
 #Value of B
 b= 1
-
-#Value of C
+"""
+-----------------------------
+#Value of C (Never Change!!!)
+-----------------------------
+"""
 c= (a*1.0+b*1.0)/2
 
-#Error CAP
-errorObj = 0.05
+#Error CAP ()
+errorObj = 10**(-2)
 
 #Formula to eval
-formula =  "x**2-3*x-2*math.log(x)"
+formula =  "math.sin(x)+math.log(x)"
 
-print("solver for equation: \n*****" + formula + "*****\n")
-print("\nNumber of iterations: " + str(iterationEval(a, b, c, errorObj , formula)))
+
+##Printing the resolution
+print("Resolucão da formula: \n*****" + formula + "*****\n")
+print("\nNumero iterações: " + str(iterationEval(a, b, c, errorObj , formula)))
