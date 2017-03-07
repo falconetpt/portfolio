@@ -42,8 +42,9 @@ def linePrint(a, b, c, i, formula):
 		images.append(y)
 		xAxis += "\t" + item[0] + str(x) + "\t"
 		yAxis += "F_" + item[0] + str(y) + "\t"
-
-	print(str(i+1) + xAxis + yAxis + "\tErro: " + str((b-a)/2))
+	output = str(i+1) + xAxis + yAxis + "\tErro: " + str((b-a)/2)
+	
+	print(output)
 	return images
 
 
