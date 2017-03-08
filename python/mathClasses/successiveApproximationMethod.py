@@ -43,14 +43,14 @@ def linePrint(a, b, c, i, formula):
 
 
 """###########################################
-	General formulation of the problem :D 	 #
+	General variables of the code	 :D 	 #
 """###########################################
 
 #Value of A
-a=0.5
+a= float(input("Introduza um valor para o A: (numerico) \n")) #exemple 0.1
 
 #Value of B
-b= 1
+b= float(input("Introduza o valor para B: (numerico) \n")) #exemple 1
 """
 -----------------------------
 #Value of C (Never Change!!!)
@@ -59,12 +59,12 @@ b= 1
 c= (a*1.0+b*1.0)/2
 
 #Error CAP ()
-errorObj = 10**(-2)
+errorObj = float(input("Introduza o erro que pretende obter: (numerico)\n"))
 
-#Formula to eval
-formula =  "math.sin(x)+math.log(x)"
+#Formula to evaluate
+formula =  str(input("Inserir a formula usada: (string)\n")) # exemple math.sin(x)+math.log(x)
 
 
 ##Printing the resolution
-print("Resolucão da formula: \n*****" + formula + "*****\n")
-print("\nNumero iterações: " + str(iterationEval(a, b, c, errorObj , formula)))
+print("Resolucao da formula: \n*****" + formula + "*****\n")
+print("\nNumero iteracoes: " + str(iterationEval(a, b, c, errorObj , formula)))
